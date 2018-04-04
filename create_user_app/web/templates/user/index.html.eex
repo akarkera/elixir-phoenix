@@ -1,0 +1,43 @@
+<%= form_for @changeset, user_path(@conn, :create), fn f -> %>
+<h2>Create User</h2>
+<br/>
+<div class="form-group  <%= if f.errors[:account] do ~s(has-error) end %>">
+<%= label f, "Account:" %>
+<%= text_input f, :account, class: "form-control" %>
+<%= error_tag f, :account %>
+</div>
+
+<div class="form-group  <%= if f.errors[:email] do ~s(has-error) end %>">
+<%= label f, "Username:" %>
+<%= text_input f, :email, class: "form-control" %>
+<%= error_tag f, :email %>
+</div>
+
+<div class="form-group  <%= if f.errors[:first_name] do ~s(has-error) end %>">
+<%= label f, "First Name:" %>
+<%= text_input f, :first_name, class: "form-control" %>
+<%= error_tag f, :first_name %>
+</div>
+
+<div class="form-group  <%= if f.errors[:last_name] do ~s(has-error) end %>">
+<%= label f, "Last Name:" %>
+<%= text_input f, :last_name, class: "form-control" %>
+<%= error_tag f, :last_name %>
+</div>
+
+<div class="form-group  <%= if f.errors[:language] do ~s(has-error)  end %>">
+<%= label f, "Language:"%>
+<br/>
+<%= select  f, :language, [{"English (Great Britain)","en"}, {"English (United States)","en-US"},{"Deutsche","de"},{"Español","es"},{"Le Français","fr"},{"Italiano","it"},{"ja","日本語"},{"Nederlands","nl"},{"Język Polski","pl"},{"Língua Portuguesa","pt"},{"Svenska","sv"},{"简体中文","zh-CN"},{"繁體中文","zh-TW"}], class: "form-control" %>
+<%= error_tag f, :language %>
+</div>
+
+<div class="form-group <%= if f.errors[:role] do ~s(has-error)  end %>">
+<%= label f, "Role:" %>
+<br/>
+<%= select  f, :role, [{"Standard User","Standard User"},{"Administrator","Administrator"}] , class: "form-control" %>
+<%= error_tag f, :role %>
+</div>
+
+<%= submit "Submit", class: "btn btn-primary"%>
+<% end %>
