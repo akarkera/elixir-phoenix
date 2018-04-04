@@ -8,6 +8,7 @@ cd to the application root folder
 $ cd create_user_app
 
 Install dependencies with mix deps.get
+
 $ mix deps.get
 
 # To start Application
