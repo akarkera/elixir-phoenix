@@ -10,7 +10,7 @@ console.log('CB_COLLECTION:' + process.env.CB_COLLECTION);
 const USER_LOGIN_CB_COLLECTION = "userlogins"
 
 const CBTable = '\`' + process.env.CB_BUCKET + '\`.\`' + process.env.CB_SCOPE + '\`.\`' + process.env.CB_COLLECTION + '\`';
-const userloginCBTable = '\`' + process.env.CB_BUCKET + '\`.\`' + process.env.CB_SCOPE + '\`.\`';
+const UBuserloginCBTable = '\`' + process.env.CB_BUCKET + '\`.\`' + process.env.CB_SCOPE + '\`.\`';
 
 module.exports.cb_getbyadvertiser = async (event) => {
   
